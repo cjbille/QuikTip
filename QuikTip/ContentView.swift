@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var total = ""
     var body: some View {
         VStack {
             HStack {
@@ -18,9 +19,19 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
             }
-            Spacer()
         }
         .padding()
+        Spacer()
+        VStack {
+            HStack {
+                TextField("Total", text: $total)
+                    .border(.secondary)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+            }
+            .padding()
+        }
+        Spacer()
     }
 }
 
